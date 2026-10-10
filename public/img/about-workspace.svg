@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Hand-inked illustration of a developer desk with a laptop, coffee mug, plant and sticky notes">
+  <style>
+    .ty{stroke-dasharray:100;animation:ty 9s ease-in-out infinite backwards;animation-delay:var(--d,0s)}
+    @keyframes ty{0%{stroke-dashoffset:100}10%{stroke-dashoffset:0}88%{stroke-dashoffset:0}100%{stroke-dashoffset:100}}
+    .caret{animation:blink 1s steps(1) infinite}
+    @keyframes blink{50%{opacity:0}}
+    .steam path{fill:none;stroke:#111;stroke-width:4;stroke-linecap:round;animation:steam 3.4s ease-out infinite}
+    .steam path:nth-child(2){animation-delay:1.1s}
+    .steam path:nth-child(3){animation-delay:2.2s}
+    @keyframes steam{0%{transform:translateY(10px);opacity:0}25%{opacity:.85}100%{transform:translateY(-30px);opacity:0}}
+    .tw{transform-box:fill-box;transform-origin:center;animation:tw 3.2s ease-in-out infinite}
+    .tw2{animation-delay:1.2s}
+    .tw3{animation-delay:2.1s}
+    @keyframes tw{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(.5) rotate(25deg)}}
+    .drift{animation:drift 6s ease-in-out infinite}
+    @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-16px,12px)}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+
+  <defs>
+    <!-- wobbly hand-drawn ink line -->
+    <filter id="wob" x="-4%" y="-4%" width="108%" height="108%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <!-- paper grain -->
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="5" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.07  0 0 0 0 0.07  0 0 0 0 0.07  0 0 0 1.1 -0.45"/>
+    </filter>
+
+    <!-- shapes (no fill / stroke here, each layer below decides) -->
+    <path id="arch" d="M70 420 V230 A150 150 0 0 1 370 230 V420 Z"/>
+    <rect id="sill" x="50" y="420" width="340" height="18" rx="4"/>
+    <circle id="sun" cx="290" cy="228" r="62"/>
+    <rect id="n1" x="470" y="130" width="120" height="120" rx="4" transform="rotate(-6 530 190)"/>
+    <rect id="n2" x="610" y="190" width="120" height="120" rx="4" transform="rotate(5 670 250)"/>
+    <rect id="n3" x="500" y="300" width="110" height="110" rx="4" transform="rotate(3 555 355)"/>
+    <rect id="scr" x="210" y="500" width="380" height="252" rx="16"/>
+    <rect id="dsp" x="232" y="522" width="336" height="206" rx="8"/>
+    <path id="base" d="M170 752 H630 L652 796 Q654 800 648 800 H152 Q146 800 148 796 Z"/>
+    <rect id="mug" x="60" y="722" width="96" height="78" rx="14"/>
+    <path id="pot" d="M634 746 H726 L710 800 H650 Z"/>
+    <rect id="rim" x="626" y="730" width="108" height="20" rx="5"/>
+    <path id="l1" d="M678 732 C636 712 624 664 636 620 C680 640 696 694 678 732 Z"/>
+    <path id="l2" d="M684 732 C700 684 730 648 772 638 C772 688 742 722 684 732 Z"/>
+    <path id="l3" d="M680 732 C666 684 674 636 690 590 C720 636 710 694 680 732 Z"/>
+    <rect id="deskTop" x="-20" y="800" width="840" height="34"/>
+    <rect id="deskBody" x="-20" y="834" width="840" height="180"/>
+  </defs>
+
+  <!-- paper -->
+  <rect width="800" height="1000" fill="#FFF4EC"/>
+  <circle cx="400" cy="520" r="340" fill="#fff" opacity=".6"/>
+
+  <!-- colour layers, shifted a few px like a misregistered riso print -->
+  <g transform="translate(7 6)" fill="#fff">
+    <use href="#arch"/><use href="#sill"/><use href="#n2"/><use href="#scr"/>
+    <use href="#pot"/><use href="#rim"/><use href="#deskTop"/>
+  </g>
+  <g transform="translate(7 6)" fill="#FFC59B">
+    <use href="#n3"/><use href="#base"/><use href="#l1"/><use href="#l2"/><use href="#l3"/>
+  </g>
+  <g transform="translate(7 6)" fill="#FF6A00">
+    <use href="#sun"/><use href="#n1"/><use href="#mug"/>
+  </g>
+  <g fill="#111">
+    <use href="#dsp"/><use href="#deskBody"/>
+  </g>
+
+  <!-- masking tape on the notes -->
+  <g fill="#fff" opacity=".7" stroke="#111" stroke-width="1.5">
+    <rect x="500" y="118" width="62" height="20" transform="rotate(-6 530 190)"/>
+    <rect x="640" y="180" width="62" height="20" transform="rotate(5 670 250)"/>
+    <rect x="526" y="290" width="62" height="20" transform="rotate(3 555 355)"/>
+  </g>
+
+  <!-- ink lines with a slight wobble -->
+  <g fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#wob)">
+    <use href="#arch"/><use href="#sill"/><use href="#sun"/>
+    <use href="#n1"/><use href="#n2"/><use href="#n3"/>
+    <use href="#scr"/><use href="#dsp"/><use href="#base"/>
+    <use href="#mug"/><use href="#pot"/><use href="#rim"/>
+    <use href="#l1"/><use href="#l2"/><use href="#l3"/>
+    <use href="#deskTop"/>
+
+    <!-- window bars and birds -->
+    <path d="M220 80 V420"/>
+    <path d="M70 300 H370"/>
+    <path d="M110 150 q10 -12 20 0 q10 -12 20 0" stroke-width="3.5"/>
+    <path d="M150 190 q8 -9 16 0 q8 -9 16 0" stroke-width="3"/>
+
+    <!-- mug handle, laptop notch -->
+    <path d="M156 744 Q198 742 198 766 Q198 790 156 786" stroke-width="5"/>
+    <path d="M360 764 H440" stroke-width="3"/>
+
+    <!-- leaf veins -->
+    <path d="M678 728 Q650 690 640 640" stroke-width="3"/>
+    <path d="M686 728 Q720 680 766 644" stroke-width="3"/>
+    <path d="M680 728 Q684 670 690 600" stroke-width="3"/>
+
+    <!-- scribbles on sticky notes -->
+    <g transform="rotate(-6 530 190)" stroke-width="5">
+      <path d="M492 166 H568"/><path d="M492 193 H554"/><path d="M492 220 H532"/>
+    </g>
+    <g transform="rotate(5 670 250)" stroke-width="4">
+      <path d="M670 220 L679 241 L702 243 L685 258 L690 281 L670 269 L650 281 L655 258 L638 243 L661 241 Z"/>
+    </g>
+    <g transform="rotate(3 555 355)">
+      <path d="M526 346 L546 368 L588 322" stroke-width="7"/>
+      <path d="M526 392 H576" stroke-width="4"/>
+    </g>
+
+    <!-- hand-drawn arrow from the notes to the laptop -->
+    <path d="M505 424 C470 440 468 470 486 492" stroke-width="4"/>
+    <path d="M470 482 L486 494 L496 476" stroke-width="4"/>
+
+    <!-- little plus signs -->
+    <path d="M90 560 v24 M78 572 h24" stroke-width="4"/>
+    <path d="M730 450 v22 M719 461 h22" stroke-width="4"/>
+  </g>
+
+  <!-- drawer handles on the desk -->
+  <g stroke="#FF6A00" stroke-width="10" stroke-linecap="round">
+    <path d="M150 905 H290"/><path d="M510 905 H650"/>
+  </g>
+  <path d="M400 846 V1000" stroke="#fff" stroke-width="3" opacity=".25"/>
+
+  <!-- code typing on the screen -->
+  <g fill="none" stroke-width="9" stroke-linecap="round">
+    <path class="ty" pathLength="100" d="M252 550 H318" stroke="#FF6A00" style="--d:0s"/>
+    <path class="ty" pathLength="100" d="M332 550 H430" stroke="#fff" style="--d:.3s"/>
+    <path class="ty" pathLength="100" d="M276 578 H384" stroke="#fff" style="--d:.9s"/>
+    <path class="ty" pathLength="100" d="M398 578 H470" stroke="#FFC59B" style="--d:1.2s"/>
+    <path class="ty" pathLength="100" d="M276 606 H352" stroke="#FFC59B" style="--d:1.8s"/>
+    <path class="ty" pathLength="100" d="M366 606 H400" stroke="#FF6A00" style="--d:2.1s"/>
+    <path class="ty" pathLength="100" d="M414 606 H512" stroke="#fff" style="--d:2.4s"/>
+    <path class="ty" pathLength="100" d="M300 634 H420" stroke="#fff" style="--d:3s"/>
+    <path class="ty" pathLength="100" d="M276 662 H330" stroke="#FF6A00" style="--d:3.6s"/>
+    <path class="ty" pathLength="100" d="M344 662 H448" stroke="#fff" style="--d:3.9s"/>
+    <path class="ty" pathLength="100" d="M252 690 H300" stroke="#fff" style="--d:4.5s"/>
+  </g>
+  <rect class="caret" x="252" y="702" width="14" height="22" fill="#FF6A00"/>
+
+  <!-- coffee steam -->
+  <g class="steam">
+    <path d="M90 706 q-12 -16 0 -32 q12 -16 0 -32"/>
+    <path d="M112 706 q-12 -16 0 -32 q12 -16 0 -32"/>
+    <path d="M134 706 q-12 -16 0 -32 q12 -16 0 -32"/>
+  </g>
+
+  <!-- cursor -->
+  <g transform="translate(535 600)">
+    <g class="drift">
+      <path d="M0 0 L0 40 L11 30 L19 48 L28 44 L20 27 L35 27 Z" fill="#fff" stroke="#111" stroke-width="4" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- sparkles -->
+  <g>
+    <path class="tw" d="M110 520 Q114 538 132 542 Q114 546 110 564 Q106 546 88 542 Q106 538 110 520 Z" fill="#FF6A00" stroke="#111" stroke-width="3" stroke-linejoin="round"/>
+    <path class="tw tw2" d="M744 520 Q748 536 764 540 Q748 544 744 560 Q740 544 724 540 Q740 536 744 520 Z" fill="#111"/>
+    <path class="tw tw3" d="M420 462 Q423 474 435 477 Q423 480 420 492 Q417 480 405 477 Q417 474 420 462 Z" fill="#FF6A00"/>
+  </g>
+
+  <!-- paper grain on top of everything -->
+  <rect width="800" height="1000" filter="url(#grain)" opacity=".5"/>
+</svg>

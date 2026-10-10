@@ -1,0 +1,29 @@
+:root {
+  --brand-orange: #ff6a00;
+  --brand-orange-light: #ff8c2e;
+  --brand-black: #111111;
+  --brand-gray: #f4f4f5;
+  --container-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--brand-black);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" width="900" height="900" role="img" aria-label="Hand-drawn chalkboard showing the steps of a project: plan, design, build, launch and support, with a laptop, a phone and a cloud">
+  <style>
+    .march{stroke-dasharray:14 14;animation:march 2.2s linear infinite}
+    @keyframes march{to{stroke-dashoffset:-28}}
+    .ring{opacity:0;transform-box:fill-box;transform-origin:center;animation:ping 10s ease-out infinite;animation-delay:var(--d,0s)}
+    @keyframes ping{
+      0%{opacity:0;transform:scale(.9)}
+      4%{opacity:1;transform:scale(1)}
+      16%{opacity:1;transform:scale(1)}
+      24%,100%{opacity:0;transform:scale(1.18)}
+    }
+    .tw{transform-box:fill-box;transform-origin:center;animation:tw 3.2s ease-in-out infinite}
+    .tw2{animation-delay:1.2s}
+    .tw3{animation-delay:2.1s}
+    @keyframes tw{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(.5) rotate(25deg)}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+
+  <defs>
+    <!-- chalk: wobbly edges plus a patchy, grainy stroke -->
+    <filter id="chalk" x="-3%" y="-3%" width="106%" height="106%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3" result="w"/>
+      <feDisplacementMap in="SourceGraphic" in2="w" scale="6" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="8" result="g"/>
+      <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.95" result="m"/>
+      <feComposite in="d" in2="m" operator="in"/>
+    </filter>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="5" stitchTiles="stitch"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.07  0 0 0 0 0.07  0 0 0 0 0.07  0 0 0 1.1 -0.45"/>
+    </filter>
+    <filter id="dust" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <!-- orange chalk hatching -->
+    <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#FF6A00" stroke-width="5"/>
+    </pattern>
+  </defs>
+
+  <!-- wall -->
+  <rect width="900" height="900" fill="#FFF4EC"/>
+
+  <!-- board: offset orange layer like a misregistered print, then the black board -->
+  <rect x="62" y="62" width="800" height="800" rx="18" fill="#FF6A00"/>
+  <rect x="50" y="50" width="800" height="800" rx="18" fill="#111" stroke="#111" stroke-width="4"/>
+
+  <!-- chalk dust -->
+  <ellipse cx="320" cy="400" rx="280" ry="110" fill="#fff" opacity=".06" filter="url(#dust)"/>
+  <ellipse cx="640" cy="640" rx="200" ry="90" fill="#fff" opacity=".05" filter="url(#dust)"/>
+
+  <!-- orange hatched discs behind the five steps -->
+  <g fill="url(#hatch)">
+    <circle cx="207" cy="246" r="62"/>
+    <circle cx="457" cy="206" r="62"/>
+    <circle cx="707" cy="246" r="62"/>
+    <circle cx="647" cy="506" r="62"/>
+    <circle cx="367" cy="546" r="62"/>
+  </g>
+  <!-- hatched shapes behind the small doodles -->
+  <g fill="url(#hatch)">
+    <rect x="177" y="683" width="96" height="62" rx="6"/>
+    <rect x="430" y="673" width="52" height="92" rx="10"/>
+    <path d="M636 744 H730 C748 744 752 718 734 714 C736 690 708 680 694 698 C682 676 644 686 648 712 C626 714 622 744 636 744 Z"/>
+  </g>
+
+  <!-- all white chalk lines, drawn once with the chalk filter -->
+  <g fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" filter="url(#chalk)">
+
+    <!-- 1 Plan: clipboard -->
+    <g transform="translate(200 240)">
+      <circle r="62"/>
+      <rect x="-24" y="-30" width="48" height="60" rx="6"/>
+      <rect x="-10" y="-38" width="20" height="14" rx="3"/>
+      <path d="M-12 -6 H12 M-12 6 H12 M-12 18 H2" stroke-width="5"/>
+      <path d="M-44 -86 H44 M-26 -104 H26" stroke-width="4" opacity=".7"/>
+    </g>
+
+    <!-- 2 Design: pencil -->
+    <g transform="translate(450 200)">
+      <circle r="62"/>
+      <g transform="rotate(45)">
+        <rect x="-9" y="-34" width="18" height="52" rx="2"/>
+        <path d="M-9 18 L0 36 L9 18"/>
+        <path d="M-9 -22 H9" stroke-width="4"/>
+      </g>
+      <path d="M-44 -86 H44 M-26 -104 H26" stroke-width="4" opacity=".7"/>
+    </g>
+
+    <!-- 3 Build: code brackets -->
+    <g transform="translate(700 240)">
+      <circle r="62"/>
+      <path d="M-14 -20 L-34 0 L-14 20"/>
+      <path d="M14 -20 L34 0 L14 20"/>
+      <path d="M7 -26 L-7 26"/>
+      <path d="M-44 -86 H44 M-26 -104 H26" stroke-width="4" opacity=".7"/>
+    </g>
+
+    <!-- 4 Launch: rocket -->
+    <g transform="translate(640 500)">
+      <circle r="62"/>
+      <path d="M0 -36 C15 -20 15 6 9 20 H-9 C-15 6 -15 -20 0 -36 Z"/>
+      <circle cx="0" cy="-8" r="6"/>
+      <path d="M-9 12 L-22 28 L-9 24 M9 12 L22 28 L9 24"/>
+      <path d="M-4 26 Q0 42 4 26" stroke-width="5"/>
+      <path d="M-44 86 H44 M-26 104 H26" stroke-width="4" opacity=".7"/>
+    </g>
+
+    <!-- 5 Support: shield with a check -->
+    <g transform="translate(360 540)">
+      <circle r="62"/>
+      <path d="M0 -36 L28 -25 V0 C28 20 13 30 0 37 C-13 30 -28 20 -28 0 V-25 Z"/>
+      <path d="M-11 0 L-3 10 L13 -11"/>
+      <path d="M-44 86 H44 M-26 104 H26" stroke-width="4" opacity=".7"/>
+    </g>
+
+    <!-- arrowheads at the end of each connector -->
+    <path d="M372 192 L388 204 L370 214"/>
+    <path d="M624 230 L640 242 L622 252"/>
+    <path d="M634 424 L646 440 L658 424"/>
+    <path d="M440 516 L424 530 L442 542"/>
+
+    <!-- web, mobile, cloud doodles -->
+    <g transform="translate(220 715)">
+      <rect x="-48" y="-38" width="96" height="62" rx="6"/>
+      <path d="M-62 24 H62 L56 38 H-56 Z"/>
+      <path d="M-30 -20 H0 M-30 -6 H18 M-30 8 H-4" stroke-width="4"/>
+    </g>
+    <g transform="translate(450 715)">
+      <rect x="-26" y="-48" width="52" height="92" rx="10"/>
+      <path d="M-8 -36 H8" stroke-width="4"/>
+      <circle cx="0" cy="32" r="5" stroke-width="4"/>
+      <path d="M-14 -14 H14 M-14 0 H14 M-14 14 H4" stroke-width="4"/>
+    </g>
+    <g transform="translate(680 715)">
+      <path d="M-44 29 H50 C68 29 72 3 54 -1 C56 -25 28 -35 14 -17 C2 -39 -36 -29 -32 -3 C-54 -1 -58 29 -44 29 Z"/>
+    </g>
+
+    <!-- chalk ledge, chalk pieces and an eraser -->
+    <path d="M78 806 H822" stroke-width="7"/>
+    <rect x="112" y="784" width="54" height="14" rx="4" stroke-width="4"/>
+    <rect x="184" y="786" width="38" height="12" rx="4" stroke-width="4" stroke="#FF6A00"/>
+    <rect x="274" y="772" width="76" height="26" rx="5" stroke-width="4"/>
+    <path d="M274 786 H350" stroke-width="4"/>
+  </g>
+
+  <!-- connectors flow from step to step -->
+  <g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".9">
+    <path class="march" d="M264 244 C310 270 340 190 386 204"/>
+    <path class="march" d="M512 206 C556 190 596 262 638 242"/>
+    <path class="march" d="M706 304 C730 380 650 410 646 438"/>
+    <path class="march" d="M578 508 C530 540 470 480 424 530"/>
+  </g>
+
+  <!-- a ring lights up each step in turn -->
+  <g fill="none" stroke="#FF6A00" stroke-width="6">
+    <circle class="ring" cx="200" cy="240" r="76" style="--d:0s"/>
+    <circle class="ring" cx="450" cy="200" r="76" style="--d:2s"/>
+    <circle class="ring" cx="700" cy="240" r="76" style="--d:4s"/>
+    <circle class="ring" cx="640" cy="500" r="76" style="--d:6s"/>
+    <circle class="ring" cx="360" cy="540" r="76" style="--d:8s"/>
+  </g>
+
+  <!-- sparkles -->
+  <g>
+    <path class="tw" d="M800 400 Q804 418 822 422 Q804 426 800 444 Q796 426 778 422 Q796 418 800 400 Z" fill="#FF6A00"/>
+    <path class="tw tw2" d="M120 470 Q123 484 137 487 Q123 490 120 504 Q117 490 103 487 Q117 484 120 470 Z" fill="#fff" opacity=".9"/>
+    <path class="tw tw3" d="M790 640 Q793 652 805 655 Q793 658 790 670 Q787 658 775 655 Q787 652 790 640 Z" fill="#fff" opacity=".9"/>
+  </g>
+
+  <!-- paper and board grain on top of everything -->
+  <rect width="900" height="900" filter="url(#grain)" opacity=".45"/>
+</svg>

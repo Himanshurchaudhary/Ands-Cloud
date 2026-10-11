@@ -146,8 +146,7 @@ export default function Footer() {
             </span>
           </Link>
           <p className="ft-about">
-            Web development, mobile apps, cloud hosting and custom software
-            solutions that help your business grow.
+            ANDS Cloud Tech Solutions is a Patna-based software company. We design and build business websites, Android and iOS mobile apps, cloud hosting setups and custom software for startups, clinics and growing businesses across India. From planning and development to launch and ongoing support, our team stays with you at every step.
           </p>
         </div>
 

@@ -3,9 +3,10 @@ import Link from "next/link";
 import { posts, formatDate } from "@/lib/posts";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
-const pageTitle = "Web Development, Mobile App and Cloud Blog";
+const pageTitle = "ANDS Cloud Blog - Web, Mobile App & Cloud Insights";
+
 const pageDescription =
-  "Practical articles on web development, mobile apps, cloud hosting and business software, written by the ANDS Cloud Tech Solutions team.";
+  "ANDS Cloud (ANDS Cloud Tech Solutions) shares practical articles on web development, mobile apps, cloud hosting and business software.";
 const pageUrl = `${SITE_URL}/blog`;
 
 // SEO metadata for the Blog listing page

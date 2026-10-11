@@ -1,10 +1,19 @@
 import About from "@/components/sections/About/About";
 
-// SEO metadata for the About page (used in the browser tab and search results)
 export const metadata = {
-  title: "About Us",
+  title: "About ANDS Cloud - Software Company in Patna",
   description:
-    "Learn about ANDS Cloud Tech Solutions, our story, mission, vision and the values behind our web, mobile and cloud services.",
+    "ANDS Cloud (ANDS Cloud Tech Solutions) is a Patna-based software company building web, mobile and cloud solutions. Learn our story, mission, vision and values.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About ANDS Cloud | ANDS Cloud Tech Solutions",
+    description:
+      "ANDS Cloud is a Patna-based software company for web, mobile and cloud solutions.",
+    url: "https://andscloud.com/about",
+    type: "website",
+  },
 };
 
 export default function AboutPage() {

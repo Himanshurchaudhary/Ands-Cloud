@@ -4,7 +4,8 @@ const APPLY_EMAIL = "support@andscloud.com"; // change to your real hiring email
 
 const pageTitle = "Careers at ANDS Cloud Tech Solutions";
 const pageDescription =
-  "Join ANDS Cloud Tech Solutions. Explore open positions in web development, mobile apps and cloud engineering in PATNA, India.";
+  "Join ANDS Cloud (ANDS Cloud Tech Solutions). Explore open roles in web development, mobile apps and cloud engineering in Patna, Bihar, India.";
+
 const pageUrl = `${SITE_URL}/careers`;
 
 // Open positions. Remove a job here when it is filled.
@@ -33,7 +34,7 @@ const jobs = [
     id: "react-native-developer",
     title: "React Native Developer (Expo)",
     type: "Full-time",
-    location: "Noida, Uttar Pradesh, India",
+    location: "PATNA, BIHAR, India",
     experience: "1 to 3 years",
     datePosted: "2026-10-01",
     summary:
@@ -53,7 +54,7 @@ const jobs = [
     id: "backend-developer",
     title: "Backend Developer (Node.js)",
     type: "Full-time",
-    location: "Noida, Uttar Pradesh, India",
+    location: "PATNA, BIHAR, India",
     experience: "1 to 3 years",
     datePosted: "2026-10-01",
     summary:
@@ -93,7 +94,7 @@ export const metadata = {
   alternates: { canonical: pageUrl },
   keywords: [
     "careers",
-    "web developer jobs Noida",
+    "web developer jobs Patna",
     "React Native developer jobs",
     "Node.js developer jobs",
     "Next.js developer jobs",
@@ -134,8 +135,8 @@ export default function CareersPage() {
       "@type": "Place",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Noida",
-        addressRegion: "Uttar Pradesh",
+        addressLocality: "Patna",
+        addressRegion: "Bihar",
         addressCountry: "IN",
       },
     },

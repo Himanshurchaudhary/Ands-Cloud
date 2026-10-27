@@ -109,21 +109,21 @@ export default function ContactForm() {
                 <Mail size={20} aria-hidden="true" />
                 <div>
                   <strong>Email</strong>
-                  <a href="mailto:info@yourdomain.com">info@yourdomain.com</a>
+                  <a href="mailto:support@andscloud.com">support@andscloud.com</a>
                 </div>
               </li>
               <li>
                 <Phone size={20} aria-hidden="true" />
                 <div>
                   <strong>Phone</strong>
-                  <a href="tel:+919999999999">+91 99999 99999</a>
+                  <a href="tel:+917563883929">+91 75638 83929</a>
                 </div>
               </li>
               <li>
                 <MapPin size={20} aria-hidden="true" />
                 <div>
                   <strong>Office</strong>
-                  <span>Noida, Uttar Pradesh, India</span>
+                  <span>Patna, Bihar, India</span>
                 </div>
               </li>
               {WHATSAPP_NUMBER ? (
